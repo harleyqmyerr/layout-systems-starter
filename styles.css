@@ -19,11 +19,11 @@
     --color-muted: #f7f7f7;
     --color-accent: #8c1d40;
     --color-gold: #ffc627;
-    --space-3: .75rem;
+    --space-3: 0.75rem;
     --space-4: 1rem;
     --space-6: 1.5rem;
     --space-8: 2rem;
-    --radius: .5rem;
+    --radius: 0.5rem;
   }
 
   body {
@@ -41,18 +41,32 @@
 @layer layout {
   .wrapper {
     /* Add a flexible logical inline-size and margin-inline auto. */
+    inline-size: min(100% - 2rem, 75rem);
+    margin-inline: auto;
   }
 
   .section {
     /* Add fluid block spacing. */
+    padding-block: clamp(2.5rem, 7vw, 6rem);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    justify-content: space-between;
   }
 
   .hero-layout {
     /* Add a responsive layout pattern. */
+    align-items: center;
+    display: grid;
+    gap: clamp(1.5rem, 5vw, 4rem);
+    grid-template-columns: minmax(0, 1.6fr) minmax(16rem, 0.8fr);
   }
 
   .guide-grid {
     /* Build an intrinsic grid using repeat(), auto-fit/auto-fill, and minmax(). */
+    display: grid;
+    gap: var(--space-6);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
   }
 
   .feature-shell {
@@ -90,7 +104,7 @@
 
   .button {
     display: inline-block;
-    padding-block: .65rem;
+    padding-block: 0.65rem;
     padding-inline: 1rem;
     border-radius: var(--radius);
     background: var(--color-accent);
