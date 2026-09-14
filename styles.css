@@ -72,6 +72,14 @@
   .feature-shell {
     /* Try this component in different container widths. */
   }
+
+  /* content driven media query - the hero should become one column
+  when the text/content can no longer maintain a readable inline size */
+  @media (max-width: 42rem) {
+    .hero-layout {
+      grid-template-columns: 1fr;
+    }
+  }
 }
 
 @layer components {
