@@ -71,6 +71,8 @@
 
   .feature-shell {
     /* Try this component in different container widths. */
+    container-type: inline-size;
+    width: 100%;
   }
 
   /* content driven media query - the hero should become one column
@@ -136,6 +138,8 @@
 
   .feature-card {
     /* Add container-type and a container query for the body layout. */
+    grid-template-columns: minmax(12rem, 0.9fr) minmax(0, 1.1fr);
+    padding: var(--space-6);
   }
 
   .feature-card__media {
